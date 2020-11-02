@@ -16,8 +16,8 @@ public class WeatherApi {
         this.dataParser = dataParser;
     }
 
-    @GetMapping("/city/{cityName}")
-    public Map<String, String> getCityWeather(@PathVariable String cityName){
+    @GetMapping
+    public Map<String, String> getCityWeather(String cityName){
         return dataParser.parseData(cityName);
     }
 }

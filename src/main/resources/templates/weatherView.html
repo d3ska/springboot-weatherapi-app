@@ -2,68 +2,67 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-
+    <title>Title</title >
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            font-family: Quicksand;
-        }
+
+    * {
+        padding: 0;
+        margin: 0;
+        font-family: Quicksand;
+    }
 
 
-        body {
-            background: #f3f2ef;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            height: 100vh;
-            width: 100vw;
-        }
+    body {
+        background: #f3f2ef;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 100vh;
+        width: 100vw;
+    }
 
-        html,
-        body {
-            height: 100%;
-        }
+    html,
+    body {
+        height: 100%;
+    }
 
-        html {
-            background: #eee;
-        }
+    html {
+        background: #eee;
+    }
 
-        .button {
-            box-shadow: 0px 1px 0px 0px #f0f7fa;
-            background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
-            background-color:#33bdef;
-            border-radius:6px;
-            border:1px solid #057fd0;
-            display:inline-block;
-            cursor:pointer;
-            color:#ffffff;
-            font-family:Quicksand;
-            font-size:12px;
-            font-weight:bold;
-            padding:6px 24px;
-            text-decoration:none;
-            text-shadow:0px -1px 0px #5b6178;
-            padding-top: 10px;
-        }
+    .button {
+        box-shadow: 0px 1px 0px 0px #f0f7fa;
+        background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+        background-color:#33bdef;
+        border-radius:6px;
+        border:1px solid #057fd0;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Quicksand;
+        font-size:12px;
+        font-weight:bold;
+        padding:6px 24px;
+        text-decoration:none;
+        text-shadow:0px -1px 0px #5b6178;
+        padding-top: 10px;
+    }
 
-        .icon-and-desc,
-        .temp,
-        .location,
-        .button{
-            text-align: center;
-            font-size: 24px;
-            top: 50%;
-            left: 50%;
-        }
+    .icon-and-desc,
+    .temp,
+    .location,
+    .button{
+        text-align: center;
+        font-size: 24px;
+        top: 50%;
+        left: 50%;
+    }
 
-        .icon{
-            width: 10vw;
-            height: 10vw;
-        }
-
+    .icon{
+        width: 10vw;
+        height: 10vw;
+    }
     </style>
 </head>
 <body>
@@ -71,21 +70,21 @@
     <div>
         <div>
                 <div class="location">
-                    <h1 th:text="${name}"></h1>
-                    <p th:text="${country}"></p>
+                    <h1 th:text="${weatherInfo.getName()}"></h1>
+                    <p th:text="${weatherInfo.getCountry()}"></p>
                 </div>
                 <div class="icon-and-desc">
-                    <img class="icon" width="50px" height="50px" th:src="${icon}">
-                    <p class="desc" th:text="${description}"></p>
+                    <img class="icon" width="50px" height="50px" th:src="${weatherInfo.getIcon()}">
+                    <p class="desc" th:text="${weatherInfo.getDescription()}"></p>
                 </div>
                 <div class="temp">
-                    <h2 th:text="${tempC}"></h2>
-                    <h2 th:text="${tempF}"></h2>
-                    <p th:text="${pressureMb}"></p>
-                </div>
+                    <h2 th:text="${weatherInfo.getTempC()}"></h2>
+                    <h2 th:text="${weatherInfo.getTempF()}"></h2>
+                    <p th:text="${weatherInfo.getPressureMb()}"></p>
                 <form method="get" th:action="@{/search}">
                     <input class="button" type="submit" value="Check another">
                 </form>
+                </div>
         </div>
 </body>
 </html>

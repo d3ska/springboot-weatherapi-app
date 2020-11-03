@@ -17,7 +17,7 @@ public class WeatherApi {
     }
 
     @GetMapping
-    public Map<String, String> getCityWeather(String cityName){
+    public Map getCityWeather(String cityName){
         return dataParser.parseData(cityName);
     }
 }

@@ -10,7 +10,7 @@ import springbootwheaterapp.demo.model.WheaterData;
 @Service
 public class WheaterReader implements DataReader {
 
-    private static final String URL = "https://api.weatherapi.com/v1/current.json?key=e1288c0f29764daaaad102535200211&q=";
+    private static final String URL = "https://api.weatherapi.com/v1/current.json?key=XXX&q=";
 
 
     @Override
